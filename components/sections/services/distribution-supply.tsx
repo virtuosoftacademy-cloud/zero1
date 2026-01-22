@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function DistributionSupplySection() {
   return (
-    <section className="py-16 md:py-20 relative overflow-hidden text-background bg-card-foreground">
+    <section className="py-16 md:py-20 relative overflow-hidden text-background bg-surface-dark-secondary">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12">
           {/* Left Content */}
@@ -21,7 +21,7 @@ export function DistributionSupplySection() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
               {/* Master Distribution */}
               <div>
-                <h3 className="text-foreground font-semibold text-base mb-3">
+                <h3 className="font-semibold text-base mb-3">
                   Master Distribution
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -31,7 +31,7 @@ export function DistributionSupplySection() {
 
               {/* Promoter Management */}
               <div>
-                <h3 className="text-foreground font-semibold text-base mb-3">
+                <h3 className="font-semibold text-base mb-3">
                   Promoter Management
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -41,7 +41,7 @@ export function DistributionSupplySection() {
 
               {/* VAN Network */}
               <div>
-                <h3 className="text-foreground font-semibold text-base mb-3">
+                <h3 className="font-semibold text-base mb-3">
                   VAN Network
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -51,7 +51,7 @@ export function DistributionSupplySection() {
 
               {/* Infrastructure Support */}
               <div>
-                <h3 className="text-foreground font-semibold text-base mb-3 underline">
+                <h3 className="font-semibold text-base mb-3">
                   Infrastructure Support
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">

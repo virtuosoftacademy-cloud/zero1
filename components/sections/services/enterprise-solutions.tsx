@@ -13,7 +13,7 @@ export function EnterpriseSolutionsSection() {
                 Enterprise Solutions
               </h2>
               <p className="text-text-on-brand/90 text-sm md:text-base">
-                The operational engine of the business covering <span className="font-semibold underline">ERP</span> and <span className="font-semibold underline">Governance</span>.
+                The operational engine of the business covering <span className="font-semibold">ERP</span> and <span className="font-semibold">Governance</span>.
               </p>
             </div>
 
@@ -21,7 +21,7 @@ export function EnterpriseSolutionsSection() {
             <div className="space-y-10">
               {/* ERP Consulting */}
               <div>
-                <h3 className="text-text-on-brand font-semibold text-base mb-3 underline">
+                <h3 className="text-text-on-brand font-semibold text-base mb-3">
                   ERP Consulting & Implementation:
                 </h3>
                 <p className="text-text-on-brand/85 text-sm leading-relaxed max-w-2xl">
@@ -31,7 +31,7 @@ export function EnterpriseSolutionsSection() {
 
               {/* IT Governance */}
               <div>
-                <h3 className="text-text-on-brand font-semibold text-base mb-3 underline">
+                <h3 className="text-text-on-brand font-semibold text-base mb-3">
                   IT Governance & Cybersecurity
                 </h3>
                 <p className="text-text-on-brand/85 text-sm leading-relaxed max-w-2xl">
