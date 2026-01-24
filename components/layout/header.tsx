@@ -44,7 +44,7 @@ function Zero1Logo() {
 /* ================= Desktop Navigation ================= */
 function DesktopNav() {
   const pathname = usePathname();
-  
+
   return (
     <nav className="hidden items-center gap-8 lg:flex">
       {navLinks.map((link) => {
@@ -53,11 +53,10 @@ function DesktopNav() {
           <Link
             key={link.href}
             href={link.href}
-            className={`text-sm tracking-wide transition-colors ${
-              isActive
+            className={`text-sm tracking-wide transition-colors ${isActive
                 ? "text-primary underline underline-offset-8 font-semibold"
                 : "text-text-on-dark hover:text-primary"
-            }`}
+              }`}
           >
             {link.label}
           </Link>
@@ -99,11 +98,10 @@ function MobileNav() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className={`text-lg font-medium tracking-wide transition-colors ${
-                    isActive
+                  className={`text-lg font-medium tracking-wide transition-colors ${isActive
                       ? "text-primary"
                       : "text-text-on-dark hover:text-primary"
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -126,13 +124,13 @@ function MobileNav() {
 /* ================= Header Component ================= */
 export function Header() {
   const pathname = usePathname();
-  
+
   // Home and Careers pages have transparent/dark hero backgrounds
   // Other pages (Services, About, Contact) need the brown navigation bar
-  const isTransparentNav = pathname === "/" || pathname.startsWith("/careers");
-  
+  const isTransparentNav = pathname === "/" || pathname === ("/careers");
+
   return (
-    <header 
+    <header
       className={`${isTransparentNav ? "absolute" : "relative"} left-0 right-0 top-0 z-50`}
       style={{ backgroundColor: isTransparentNav ? "transparent" : "#2F140B" }}
     >

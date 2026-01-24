@@ -159,7 +159,7 @@ export default function JobDetailPage() {
       </div>
 
       {/* Job Header */}
-      <section className="pb-8">
+      <section className="pb-8 border-b-2 mx-26">
         <div className="max-w-4xl mx-auto px-6">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
             {job.title}
@@ -171,8 +171,6 @@ export default function JobDetailPage() {
             {job.shortDescription}
           </p>
           
-          {/* Orange Divider */}
-          <div className="mt-8 h-1 bg-primary w-full" />
         </div>
       </section>
 
@@ -224,12 +222,12 @@ export default function JobDetailPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-secondary">
+      <section className="py-16 border-t-2 mx-22">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
             {job.ctaText}
           </h2>
-          <Button className="bg-primary hover:bg-primary-dark text-primary-foreground px-8 py-3 rounded-md font-medium">
+          <Button className="bg-primary hover:bg-primary-dark text-background px-8 py-3 font-medium">
             Apply Now
           </Button>
         </div>
