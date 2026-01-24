@@ -40,7 +40,7 @@ export function ContactForm() {
   return (
     <section >
       {/* Main Form Section with Orange Background */}
-      <div className="relative min-h-[500px] overflow-hidden">
+      <div className="relative min-h-[500] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -53,11 +53,11 @@ export function ContactForm() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-8 lg:py-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Left Side - Testimonial */}
             <div className="text-primary-foreground">
-              <h1 className="text-3xl lg:text-4xl font-bold italic mb-8 leading-tight">
+              <h1 className="text-3xl lg:text-4xl font-bold mb-8 leading-tight">
                 Turn complexity
                 <br />
                 into clarity.
@@ -65,14 +65,20 @@ export function ContactForm() {
 
               {/* Clutch Rating */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 bg-[#1b1b1b] rounded-full flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-sm">C</span>
-                </div>
+                <Image
+                  src="/images/clutch.png"
+                  alt="Careers at Zero One"
+                  width={28}
+                  height={28}
+                  className="size-15"
+                  priority
+                />
+
                 <div>
                   <span className="font-bold">4.9</span>
                   <span className="text-primary-foreground/80"> / 5.0</span>
                   <p className="text-sm text-primary-foreground/80">
-                    reviews on <span className="font-semibold">clutch.co</span>
+                    reviews on <span className="font-bold">clutch.co</span>
                   </p>
                 </div>
               </div>
@@ -111,11 +117,10 @@ export function ContactForm() {
                   <button
                     key={index}
                     onClick={() => setCurrentTestimonial(index % testimonials.length)}
-                    className={`h-1 rounded-full transition-all ${
-                      index === currentTestimonial
-                        ? "w-8 bg-foreground"
+                    className={`h-1 rounded-full transition-all ${index === currentTestimonial
+                        ? "w-8 bg-background"
                         : "w-4 bg-primary-foreground/40"
-                    }`}
+                      }`}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />
                 ))}
@@ -220,7 +225,7 @@ export function ContactForm() {
                 <Button
                   type="submit"
                   variant="outline"
-                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent px-8 py-3 rounded-md"
+                  className="text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent px-8 py-3"
                 >
                   Book free consultation
                 </Button>
@@ -246,7 +251,7 @@ export function ContactForm() {
                       marketingConsent: e.target.checked,
                     })
                   }
-                  className="mt-1 w-4 h-4 border-2 border-foreground rounded-none accent-primary"
+                  className="mt-1 w-4 h-4 border-2 border-primary rounded-none accent-primary"
                 />
                 <span className="text-sm text-foreground">
                   I agree to receive marketing information and updates via email.

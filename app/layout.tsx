@@ -9,7 +9,6 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: 'Zero1 | Built For The Next Digital Frontier',
   description: 'From Qatar\'s industrial roots to the future of AI-driven enterprise. Scale your operations with an integrated ecosystem of distribution, ERP expertise, and custom software engineering.',
-  generator: 'v0.app',
   icons: {
     icon: [
       {

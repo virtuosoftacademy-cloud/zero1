@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Logo from "@/public/logo/Logo.png";
 import {
   MailIcon,
   ClockIcon,
@@ -10,11 +11,12 @@ import {
   InstagramIcon,
   LinkedInIcon,
 } from "@/components/icons";
+import Image from "next/image";
 
 const exploreLinks = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
+  { name: "About", href: "/about" },
   { name: "Careers", href: "/careers" },
   { name: "Get Started", href: "/contact" },
 ];
@@ -34,30 +36,37 @@ export function Footer() {
   return (
     <footer className="relative">
       {/* Main footer with dark background and geometric pattern */}
-      <div className="bg-surface-dark-secondary relative overflow-hidden">
-        {/* Subtle geometric pattern overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-              <pattern id="footerPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                <circle cx="1" cy="1" r="0.5" className="fill-primary" />
-                <line x1="0" y1="0" x2="10" y2="10" className="stroke-primary" strokeWidth="0.1" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#footerPattern)" />
-          </svg>
-        </div>
+      <div className="bg-surface-dark-secondary relative px-16 lg:px-22 overflow-hidden">
+        <div className="absolute inset-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+          {/* Add webm version if you have it for better compatibility/performance */}
+          {/* <source src="/videos/hero-bg.webm" type="video/webm" /> */}
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Optional: subtle overlay to improve text readability */}
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
 
         <div className="relative z-10 container mx-auto px-4 lg:px-8 py-12 lg:py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
             {/* Logo and description */}
             <div>
               <Link href="/" className="inline-block mb-5">
-                <span className="text-3xl font-bold tracking-tight">
-                  <span className="text-text-on-dark">zer</span>
-                  <span className="text-primary">o</span>
-                  <span className="text-primary">1</span>
-                </span>
+                   <Image
+          src={Logo}
+          alt="Zero1 Logo"
+          width={120}
+          height={40}
+          className="object-contain"
+        />
               </Link>
               <p className="text-text-muted-on-dark text-sm leading-relaxed max-w-xs">
                 From Qatar's industrial roots to the future of AI-driven enterprise.

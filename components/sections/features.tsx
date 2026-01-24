@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowUpRightIcon, GlobeIcon, CpuIcon } from "@/components/icons";
+import Image from "next/image";
 
 /* ================= Features Section ================= */
 
@@ -52,7 +53,7 @@ function FeatureCard({
 
   return (
     <Card className="border border-border bg-card shadow-none">
-      <CardContent className="p-6 lg:p-8">
+      <CardContent className="py-2 px-8">
         {/* Icon */}
         <div className="mb-4 text-foreground">
           <IconComponent />
@@ -74,32 +75,40 @@ function FeatureCard({
 
 export function FeaturesSection() {
   return (
-    <section className="bg-secondary py-16 lg:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mb-12 text-center lg:mb-16">
-          <h2 className="mb-2 text-2xl font-medium text-foreground sm:text-3xl lg:text-4xl">
-            Built for clarity.
-          </h2>
-          <p className="text-2xl font-bold italic text-primary sm:text-3xl lg:text-4xl">
-            Designed for action.
-          </p>
-          <p className="mt-4 text-sm text-muted-foreground sm:text-base">
-            Everything you need to integrate, automate, and scale.
-          </p>
-        </div>
+    <section className="relative overflow-hidden py-8 lg:py-12">
+      {/* Background image - positioned on right */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/images/bg-clarity.png"
+          alt="Business professional"
+          fill
+          className="object-cover"
+          priority={true}
+        />
+      </div>
 
-        {/* Feature Cards Grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          {features.map((feature) => (
-            <FeatureCard
-              key={feature.id}
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
-            />
-          ))}
-        </div>
+      <div className="mb-12 text-center lg:mb-16 z-10">
+        <h2 className="mb-2 text-2xl font-medium text-foreground sm:text-3xl lg:text-4xl">
+          Built for clarity.
+        </h2>
+        <p className="text-2xl font-extrabold text-primary sm:text-3xl lg:text-5xl">
+          Designed for action.
+        </p>
+        <p className="mt-4 text-sm sm:text-base">
+          Everything you need to integrate, automate, and scale.
+        </p>
+      </div>
+
+      {/* Feature Cards Grid */}
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 px-6">
+        {features.map((feature) => (
+          <FeatureCard
+            key={feature.id}
+            icon={feature.icon}
+            title={feature.title}
+            description={feature.description}
+          />
+        ))}
       </div>
     </section>
   );

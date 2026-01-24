@@ -35,7 +35,7 @@ const features = [
 
 export function AboutContent() {
   return (
-    <section className="bg-secondary py-16 lg:py-24">
+    <section className="bg-secondary py-16 lg:py-24 px-16 lg:px-22">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section title */}
         <h2 className="text-2xl lg:text-3xl font-bold text-foreground text-center mb-12 lg:mb-16">

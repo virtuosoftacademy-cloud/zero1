@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Logo from "@/public/logo/Logo.png";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -11,6 +12,7 @@ import {
   SheetTrigger,
   SheetTitle,
 } from "@/components/ui/sheet";
+import Image from "next/image";
 
 /* ================= Navigation Links Data ================= */
 const navLinks = [
@@ -18,14 +20,22 @@ const navLinks = [
   { href: "/services", label: "SERVICES" },
   { href: "/about", label: "ABOUT" },
   { href: "/careers", label: "CAREERS" },
+  { href: "/contact", label: "GET STARTED" },
 ];
 
 /* ================= Zero1 Logo Component ================= */
 function Zero1Logo() {
   return (
     <Link href="/" className="flex items-center">
-      <span className="text-2xl font-bold tracking-tight text-text-on-dark">
-        zero<span className="text-primary">1</span>
+      <span className="">
+        <Image
+          src={Logo}
+          alt="Zero1 Logo"
+          width={120}
+          height={40}
+          className="object-contain"
+        />
+        {/* zer<span className="text-primary uppercase">o1</span> */}
       </span>
     </Link>
   );
@@ -43,9 +53,9 @@ function DesktopNav() {
           <Link
             key={link.href}
             href={link.href}
-            className={`text-sm font-medium tracking-wide transition-colors ${
+            className={`text-sm tracking-wide transition-colors ${
               isActive
-                ? "text-primary"
+                ? "text-primary underline underline-offset-8 font-semibold"
                 : "text-text-on-dark hover:text-primary"
             }`}
           >
@@ -53,12 +63,6 @@ function DesktopNav() {
           </Link>
         );
       })}
-      <Link
-        href="/contact"
-        className="text-sm font-medium tracking-wide text-text-on-dark transition-colors hover:text-primary"
-      >
-        GET STARTED
-      </Link>
     </nav>
   );
 }
@@ -132,7 +136,7 @@ export function Header() {
       className={`${isTransparentNav ? "absolute" : "relative"} left-0 right-0 top-0 z-50`}
       style={{ backgroundColor: isTransparentNav ? "transparent" : "#2F140B" }}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-22">
         <Zero1Logo />
         <DesktopNav />
         <MobileNav />

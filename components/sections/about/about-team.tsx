@@ -59,7 +59,7 @@ export function AboutTeam() {
           </h3>
           
           <Link href="/careers">
-            <Button className="bg-primary hover:bg-primary-dark text-primary-foreground px-8 py-3 rounded-md font-medium">
+            <Button className="bg-primary hover:bg-primary-dark text-primary-foreground px-8 py-3 font-semibold">
               View Open Roles
             </Button>
           </Link>
