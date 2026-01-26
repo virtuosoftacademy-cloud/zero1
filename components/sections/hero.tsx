@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 
 
@@ -9,7 +8,7 @@ import { Button } from "@/components/ui/button";
 /* ================= Hero Section ================= */
 export function HeroSection() {
   return (
-    <section className="relative min-h-[600px] overflow-hidden bg-surface-dark pt-20 lg:min-h-[700px]">
+    <section className="relative min-h-[670] overflow-hidden bg-surface-dark pt-25 md:pt-40 lg:pt-30 md:h-screen lg:h-screen">
       {/* Background Video */}
       <div className="absolute inset-0">
         <video
@@ -30,15 +29,14 @@ export function HeroSection() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
-        <div className="text-center">
+      <div className="relative text-center z-10 m-auto max-w-7xl px-4 py-16  sm:py-24 lg:px-8 lg:py-32">
           <p className="mb-4 text-lg font-bold text-text-on-dark sm:text-xl lg:text-2xl">
             50 Years Of Stability.
           </p>
 
           <h1 className="mb-6 text-3xl font-extrabold leading-tight tracking-tight text-text-on-dark sm:text-4xl md:text-5xl lg:text-[60px]">
             Built For The{" "}
-            <span className="bg-gradient-to-r from-primary-dark to-primary bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary-dark to-primary bg-clip-text text-transparent">
               Next Digital Frontier.
             </span>
           </h1>
@@ -62,7 +60,6 @@ export function HeroSection() {
             </Button>
           </div>
         </div>
-      </div>
     </section>
   );
 }

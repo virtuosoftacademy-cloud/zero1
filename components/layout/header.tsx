@@ -27,7 +27,7 @@ const navLinks = [
 function Zero1Logo() {
   return (
     <Link href="/" className="flex items-center">
-      <span className="">
+      <span className="w-20 md:w-full">
         <Image
           src={Logo}
           alt="Zero1 Logo"
@@ -35,7 +35,6 @@ function Zero1Logo() {
           height={40}
           className="object-contain"
         />
-        {/* zer<span className="text-primary uppercase">o1</span> */}
       </span>
     </Link>
   );
@@ -48,14 +47,14 @@ function DesktopNav() {
   return (
     <nav className="hidden items-center gap-8 lg:flex">
       {navLinks.map((link) => {
-        const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+        const isActive = link.href === "/" ? pathname === "/" : pathname === (link.href);
         return (
           <Link
             key={link.href}
             href={link.href}
             className={`text-sm tracking-wide transition-colors ${isActive
-                ? "text-primary underline underline-offset-8 font-semibold"
-                : "text-text-on-dark hover:text-primary"
+              ? "text-primary underline underline-offset-8 font-semibold"
+              : "text-text-on-dark hover:text-primary"
               }`}
           >
             {link.label}
@@ -85,10 +84,9 @@ function MobileNav() {
       </SheetTrigger>
       <SheetContent
         side="right"
-        className="w-full bg-surface-dark border-l-0 sm:max-w-sm"
+        className="pl-10 w-full bg-surface-dark border-l-0 sm:max-w-sm"
       >
-        <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-        <div className="flex flex-col gap-6 pt-8">
+        <div className="flex flex-col gap-6 pt-6">
           <Zero1Logo />
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => {
@@ -99,21 +97,14 @@ function MobileNav() {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={`text-lg font-medium tracking-wide transition-colors ${isActive
-                      ? "text-primary"
-                      : "text-text-on-dark hover:text-primary"
+                    ? "text-primary"
+                    : "text-text-on-dark hover:text-primary"
                     }`}
                 >
                   {link.label}
                 </Link>
               );
             })}
-            <Link
-              href="/contact"
-              onClick={() => setOpen(false)}
-              className="text-lg font-medium tracking-wide text-text-on-dark transition-colors hover:text-primary"
-            >
-              GET STARTED
-            </Link>
           </nav>
         </div>
       </SheetContent>
