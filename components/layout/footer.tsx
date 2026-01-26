@@ -68,7 +68,7 @@ export function Footer() {
           className="object-contain"
         />
               </Link>
-              <p className="text-text-muted-on-dark text-sm leading-relaxed max-w-xs">
+              <p className="text-background text-sm leading-relaxed max-w-xs">
                 From Qatar's industrial roots to the future of AI-driven enterprise.
                 Scale your operations with an integrated ecosystem of distribution,
                 ERP expertise, and custom software engineering.
@@ -83,7 +83,7 @@ export function Footer() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-text-muted-on-dark text-sm hover:text-text-on-dark transition-colors"
+                      className="text-background text-sm hover:text-accent transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -98,8 +98,8 @@ export function Footer() {
               <ul className="space-y-3">
                 {contactInfo.map((item, index) => (
                   <li key={index} className="flex items-center gap-3">
-                    <item.icon className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span className="text-text-muted-on-dark text-sm">{item.text}</span>
+                    <item.icon className="w-4 h-4 text-primary shrink-0" />
+                    <span className="text-background text-sm">{item.text}</span>
                   </li>
                 ))}
               </ul>

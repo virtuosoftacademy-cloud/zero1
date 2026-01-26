@@ -61,7 +61,7 @@ export const ServiceSectionCard: FC<ServiceGridSectionProps> = ({
 
           {/* Right - Optional 3D / Abstract Image (lg screens only) */}
           {imageSrc && (
-            <div className="hidden lg:block relative w-[320px] h-[480] -mt-20 sm:-mr-12 xl:-mr-40">
+            <div className="hidden lg:block relative sm:w-[320] h-[480] md:w-[320] xl:w-[400] -mt-20 sm:-mr-12 xl:-mr-42">
               <Image
                 src={imageSrc}
                 alt={imageAlt}
