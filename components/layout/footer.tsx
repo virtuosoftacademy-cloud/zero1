@@ -105,7 +105,7 @@ export function Footer() {
               </ul>
 
               {/* Social icons */}
-              <div className="flex items-center gap-4 mt-6">
+              {/* <div className="flex items-center gap-4 mt-6">
                 <Link
                   href="#"
                   className="text-text-on-dark hover:text-primary transition-colors"
@@ -127,7 +127,7 @@ export function Footer() {
                 >
                   <LinkedInIcon className="w-5 h-5" />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
