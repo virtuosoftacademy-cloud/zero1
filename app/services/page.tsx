@@ -1,22 +1,19 @@
+'use client'
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ServicesHero } from "@/components/sections/services/services-hero";
-import { DigitalSoftwareSection } from "@/components/sections/services/digital-software";
-import { CloudAISection } from "@/components/sections/services/cloud-ai";
-import { EnterpriseSolutionsSection } from "@/components/sections/services/enterprise-solutions";
-import { DistributionSupplySection } from "@/components/sections/services/distribution-supply";
-import { GrowthEnablementSection } from "@/components/sections/services/growth-enablement";
+import ServicesSection from "@/components/sections/services/servicesSection";
+import { aiCategory, csCategory, dsCategory } from "../_constant";
+import ServicesSectionDist from "@/components/sections/services/servicesSectionDist";
 
 export default function ServicesPage() {
   return (
     <main className="min-h-screen">
       <Header />
       <ServicesHero />
-      <DigitalSoftwareSection />
-      <CloudAISection />
-      <EnterpriseSolutionsSection />
-      <DistributionSupplySection />
-      <GrowthEnablementSection />
+      <ServicesSection category={aiCategory}/>
+      <ServicesSection category={csCategory}/>
+      <ServicesSectionDist category={dsCategory}/>
       <Footer />
     </main>
   );

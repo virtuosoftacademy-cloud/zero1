@@ -30,6 +30,7 @@ export const ServiceSectionCard: FC<ServiceGridSectionProps> = ({
 }) => {
   return (
     <section className={`${bgClassName} py-16 md:py-20 relative overflow-hidden`}>
+      
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12">
           {/* Left - Content */}
