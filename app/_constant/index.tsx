@@ -119,16 +119,27 @@ export const csCategory = {
         { label: 'Risk Management & Governance', description: "Identify, assess, and mitigate technical, operational, security, and compliance risks across digital initiatives. This includes data security, system dependencies, scalability risks, vendor lock-in, process failures, and regulatory exposure. Our approach ensures startups build on safe foundations while enterprises maintain resilience, governance, and long-term operational trust." },
     ],
 }
-const icon = "/icons/"
+const icon = "icons/"
 export const dsCategory = {
     title: 'Distribution',
-    subtitle: 'Zero One  offers comprehensive OT security services to safeguard industrial environments, including ICS, SCADA, PLCs, and operational networks. Our services focus on securing IT–OT convergence, reducing cyber risk, and ensuring continuous and safe operations. We align OT security implementations with industry standards and regulatory requirements while minimizing disruption to critical systems.',
+    subtitle: `<p><span class="font-bold">Zero One</span> <strong class="font-normal"><em>new-generation</em></strong> <span class="font-bold">telecom business support services</span> enables smooth operation & expansion of the technology industry</p>
+<p> <span class="font-bold">Zero One</span> is a one stop destination for <span class="font-bold"> end-to-end Supply Chain Services and Solutions </span> for leading companies in Telecom & Information Technology industries. Being a <span class="font-bold">'Distributor of Choice'</span>, we empower brands with an extensive network of resellers to help them expand their reach and maximize value to their business, while catering to dynamically changing market requirements.</p>
+<p>  The Telecom Distribution is a specialized division of Zero One, who understands the dynamic nature of the segment and has developed infrastructure and expertise to meet the needs of the telecom industry.</p>`,
     textColor: 'text-white',
     bgImage: `/images/bg_dist.png`,
     services: [
         {
-            icon:`/${icon}/services_dist_sales.png`,label: 'Sales Team', description: 'A <span class="font-bold">"Distributor of Choice"</span> for global tech brands, ' +
+            icon: `/${icon}/services_dist_sales.png`, label: 'Sales Team', description: 'A <span class="font-bold">"Distributor of Choice"</span> for global tech brands,' +
                 'utilizing a vast reseller network to penetrate Retail and SMB markets.'
+        },
+        {
+            icon: `/${icon}/services_dist_promote.png`, label: 'Promoter Management', description: 'Deployed teams at key retail outlets to drive merchandising and direct sales.'
+        },
+        {
+            icon: `/${icon}/services_dist_van.png`, label: 'VAN Network', description: 'A dedicated fleet ensuring immediate stock availability for independent retail chains across Qatar.'
+        },
+        {
+            icon: `/${icon}/services_dist_market.png`, label: 'Marketing', description: '360 Degree marketing including product launch, channel awareness, training and loyalty'
         },
     ],
 }

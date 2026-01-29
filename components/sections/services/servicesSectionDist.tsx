@@ -1,22 +1,21 @@
 
 'use client'
 
-import { Card } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 
 interface Service {
   label: string
   description?: string
-  icon?:string
+  icon: string
 }
 
 interface Category {
   id: string
   title: string
-  subtitle: string          // short tagline above title
-  bgColor: string           // e.g. "bg-[#0E3782]" or "bg-gradient-to-br from-blue-950 to-indigo-950"
-  textColor: string         // e.g. "text-white"
+  subtitle: string
+  bgColor: string
+  textColor: string
   bgImage?: string
   services: Service[]
 }
@@ -36,7 +35,6 @@ export default function ServicesSectionDist({
     bgColor,
     textColor,
     bgImage,
-    // accentImage,
     services,
   } = category
 
@@ -53,36 +51,42 @@ export default function ServicesSectionDist({
 
         <div className="relative z-10 px-6 md:px-10 lg:px-24 py-20">
           {/* Header */}
-          <div className="max-w-4xl pb-2 md:pb-8 space-y-3">
-            <h2 className="text-2xl sm:text-5xl md:text-3xl lg:text-4xl font-extrabold leading-tight mt-2">
+          <div className="max-w-5xl pb-2 md:pb-8 space-y-3">
+            <h2 className="text-2xl lg:text-4xl font-extrabold leading-tight mt-2">
               {title}
             </h2>
-            <p className="text-xs sm:text-sm text-white md:text-lg tracking-wide">
-              {subtitle}
-            </p>
+            <div className="text-xs sm:text-sm text-white md:text-lg tracking-wide space-y-4" dangerouslySetInnerHTML={{__html:subtitle}}/>
           </div>
 
+          <h4 className="text-2xl font-semibold">Channel Partner Offering</h4>
           {/* Services cards grid */}
           <div
             className=
-              "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8"
+            "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 mt-3 md:mt-6"
           >
             {services.map((service, index) => (
               <div
-                key={`${service.label}-${index}`}
-                className="flex items-center flex-col"
+                key={index}
+                className="py-4 flex gap-x-5 lg:w-xl"
               >
-                <div>
-                <Image src={service.icon??"Image"} alt="" fill loading={"lazy"}/>
+                {/* Icon */}
+                <div className="mb-6 size-20">
+                  <Image
+                    src={service.icon}
+                    alt={service.label}
+                    width={58}
+                    height={58}
+                  />
                 </div>
-                <div className="space-y-4 text-white">
-                  <h3 className="text-lg md:text-xl font-semibold">
+
+                {/* Title */}
+                <div>
+                  <h3 className="text-lg lg:text-xl font-bold mb-3">
                     {service.label}
                   </h3>
 
-                  {service.description && (
-                    <p className="text-sm md:text-base leading-relaxed opacity-85" dangerouslySetInnerHTML={{ __html: service.description }}/>
-                  )}
+                  {/* Description */}
+                  <p className="text-sm md:text-lg leading-relaxed" dangerouslySetInnerHTML={{__html:service.description}}/>
                 </div>
               </div>
             ))}
