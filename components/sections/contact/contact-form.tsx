@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react"
-
-import { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { Toaster, toast } from 'sonner';
+import { sendContactEmail } from "./actions/SendContactEmail";
 
 /* ================= Testimonials Data ================= */
 const testimonials = [
@@ -17,10 +17,13 @@ const testimonials = [
     role: "Chief Information Officer (CIO) – Industrial Logistics Sector",
     image: "/images/testimonial-hassan.jpg",
   },
+  // You can add more testimonials here later
 ];
 
 export function ContactForm() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -31,14 +34,64 @@ export function ContactForm() {
     smsConsent: false,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+
+    // Basic validation
+    if (!formData.fullName.trim()) {
+      toast.error("Full name is required");
+      return;
+    }
+    if (!formData.phoneNumber.trim()) {
+      toast.error("Phone number is required");
+      return;
+    }
+    if (!formData.workEmail.trim()) {
+      toast.error("Work email is required");
+      return;
+    }
+    if (!/\S+@\S+\.\S+/.test(formData.workEmail)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+    if (!formData.helpType) {
+      toast.error("Please select how we can help you");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // Call server action
+      const result = await sendContactEmail(formData);
+
+      if (result.success) {
+        toast.success("Thank you! Your message has been sent.");
+        // Reset form
+        setFormData({
+          fullName: "",
+          phoneNumber: "",
+          workEmail: "",
+          helpType: "",
+          projectDescription: "",
+          marketingConsent: false,
+          smsConsent: false,
+        });
+      } else {
+        toast.error(result.message || "Failed to send message. Try again.");
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("Something went wrong. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <section >
+    <section>
+      <Toaster position="top-center" richColors />
+
       {/* Main Form Section with Orange Background */}
       <div className="relative min-h-[500] overflow-hidden">
         {/* Background Image */}
@@ -117,10 +170,11 @@ export function ContactForm() {
                   <button
                     key={index}
                     onClick={() => setCurrentTestimonial(index % testimonials.length)}
-                    className={`h-1 rounded-full transition-all ${index === currentTestimonial
+                    className={`h-1 rounded-full transition-all ${
+                      index === currentTestimonial
                         ? "w-8 bg-background"
                         : "w-4 bg-primary-foreground/40"
-                      }`}
+                    }`}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />
                 ))}
@@ -143,6 +197,7 @@ export function ContactForm() {
                         setFormData({ ...formData, fullName: e.target.value })
                       }
                       className="w-full bg-transparent border-b border-primary-foreground/50 pb-2 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-primary-foreground"
+                      disabled={loading}
                     />
                   </div>
                   <div>
@@ -156,6 +211,7 @@ export function ContactForm() {
                         setFormData({ ...formData, phoneNumber: e.target.value })
                       }
                       className="w-full bg-transparent border-b border-primary-foreground/50 pb-2 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-primary-foreground"
+                      disabled={loading}
                     />
                   </div>
                 </div>
@@ -173,6 +229,7 @@ export function ContactForm() {
                         setFormData({ ...formData, workEmail: e.target.value })
                       }
                       className="w-full bg-transparent border-b border-primary-foreground/50 pb-2 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-primary-foreground"
+                      disabled={loading}
                     />
                   </div>
                   <div>
@@ -185,6 +242,7 @@ export function ContactForm() {
                         setFormData({ ...formData, helpType: e.target.value })
                       }
                       className="w-full bg-transparent border-b border-primary-foreground/50 pb-2 text-primary-foreground focus:outline-none focus:border-primary-foreground appearance-none"
+                      disabled={loading}
                     >
                       <option value="" className="text-foreground"></option>
                       <option value="consultation" className="text-foreground">
@@ -218,6 +276,7 @@ export function ContactForm() {
                     }
                     rows={3}
                     className="w-full bg-transparent border-b border-primary-foreground/50 pb-2 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-primary-foreground resize-none"
+                    disabled={loading}
                   />
                 </div>
 
@@ -225,9 +284,10 @@ export function ContactForm() {
                 <Button
                   type="submit"
                   variant="outline"
+                  disabled={loading}
                   className="text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent px-8 py-3"
                 >
-                  Book free consultation
+                  {loading ? "Sending..." : "Book free consultation"}
                 </Button>
               </form>
             </div>
@@ -251,6 +311,7 @@ export function ContactForm() {
                       marketingConsent: e.target.checked,
                     })
                   }
+                  disabled={loading}
                   className="mt-1 w-4 h-4 border-2 border-primary rounded-none accent-primary"
                 />
                 <span className="text-sm text-foreground">
@@ -265,6 +326,7 @@ export function ContactForm() {
                   onChange={(e) =>
                     setFormData({ ...formData, smsConsent: e.target.checked })
                   }
+                  disabled={loading}
                   className="mt-1 w-4 h-4 border-2 border-foreground rounded-none accent-primary"
                 />
                 <span className="text-sm text-foreground">
@@ -277,11 +339,11 @@ export function ContactForm() {
             {/* Legal Text */}
             <p className="text-xs text-muted-foreground leading-relaxed">
               By &quot;Submitting&quot; this form, you are agreeing to Zero One&apos;s{" "}
-              <Link href="/terms" className="text-primary hover:underline">
+              <Link href="/" className="text-primary hover:underline">
                 Terms of Use
               </Link>{" "}
               and{" "}
-              <Link href="/privacy" className="text-primary hover:underline">
+              <Link href="/" className="text-primary hover:underline">
                 Privacy Policy
               </Link>
               . We will never sell, or trade your personal information, including
