@@ -13,8 +13,8 @@ export async function sendContactEmail(data: {
 }) {
   try {
     const transporter = nodemailer.createTransport({
-      host: 'smtp.secureserver.net',
-      port: 587,
+      host: 'relay-hosting.secureserver.net',
+      port: 25,
       secure: false,
       tls: { rejectUnauthorized: false } 
     });
