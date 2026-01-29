@@ -16,22 +16,15 @@ export async function sendContactEmail(data: {
       host: 'relay-hosting.secureserver.net',
       port: 25,
       secure: false,
-      tls: { rejectUnauthorized: false } 
+      tls: { rejectUnauthorized: false }
     });
 
     await transporter.sendMail({
-     from: 'Zero One <onboarding@resend.dev>', 
+      from: 'Zero One <onboarding@resend.dev>',
       to: process.env.RECEIVER_EMAIL,
       replyTo: data.workEmail,
       subject: `New Consultation Request from ${data.fullName}`,
-      text: `
-Name: ${data.fullName}
-Phone: ${data.phoneNumber}
-Email: ${data.workEmail}
-Help type: ${data.helpType}
-
-Project / Message:
-${data.projectDescription || '(no description provided)'}
+      text: `Name: ${data.fullName}Phone: ${data.phoneNumber}Email: ${data.workEmail}Help type: ${data.helpType}Marketing consent: ${data.marketingConsent ? 'Yes' : 'No'}SMS consent: ${data.smsConsent ? 'Yes' : 'No'}Project / Message:${data.projectDescription || '(no description provided)'}
       `.trim(),
 
       html: `
