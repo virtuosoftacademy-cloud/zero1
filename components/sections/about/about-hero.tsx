@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { Dot } from "lucide-react";
 const scrollToTeam = () => {
     window.scrollTo({ top: 2400, behavior: "smooth" });
