@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Dot } from "lucide-react";
 const scrollToTeam = () => {
-    window.scrollTo({ top: 2000, behavior: "smooth" });
+    window.scrollTo({ top: 2400, behavior: "smooth" });
   };
 export function AboutHero() {
   return (
