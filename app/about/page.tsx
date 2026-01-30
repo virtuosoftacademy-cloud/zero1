@@ -5,6 +5,7 @@ import { AboutValues } from "@/components/sections/about/about-values";
 import { AboutMission } from "@/components/sections/about/about-mission";
 import { AboutFounder } from "@/components/sections/about/about-founder";
 import { AboutTeam } from "@/components/sections/about/about-team";
+import { ClientLogosSection } from "@/components/sections/client-logos";
 
 export default function AboutPage() {
   return (
@@ -12,7 +13,8 @@ export default function AboutPage() {
       <Header />
       <AboutHero />
       <AboutMission />
-      <AboutValues />
+      {/* <AboutValues /> */}
+      <ClientLogosSection/>
       <AboutFounder />
       <AboutTeam />
       <Footer />

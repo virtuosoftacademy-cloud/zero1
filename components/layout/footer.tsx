@@ -2,12 +2,6 @@
 
 import Link from "next/link";
 import Logo from "@/public/logo/Logo.png";
-import {
-  MailIcon,
-  ClockIcon,
-  PhoneIcon,
-  MapPinIcon,
-} from "@/components/icons";
 import Image from "next/image";
 
 const exploreLinks = [
@@ -46,7 +40,7 @@ export function Footer() {
             <source src="/videos/hero-bg.mp4" type="video/mp4" />
             {/* Add webm version if you have it for better compatibility/performance */}
             {/* <source src="/videos/hero-bg.webm" type="video/webm" /> */}
-            Your browser does not support the video tag.
+            Your browser does not support the video.
           </video>
 
           {/* Optional: subtle overlay to improve text readability */}

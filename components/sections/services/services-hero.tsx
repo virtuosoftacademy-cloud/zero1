@@ -8,9 +8,7 @@ export function ServicesHero() {
           The Complete Service Spectrum.
         </h1>
         <p className="text-xs md:text-sm leading-relaxed max-w-4xl mx-auto">
-          Unify your operations with a single strategic partner. From global hardware distribution to custom AI and
-          ERP implementation, we provide the end-to-end capabilities required to scale modern enterprises.
-        </p>
+          Unify your operations with a single strategic partner. From global distribution to custom AI and Cybersecurity services, we provide the end-to-end capabilities required to scale modern enterprises.</p>
       </div>
     </section>
   );
