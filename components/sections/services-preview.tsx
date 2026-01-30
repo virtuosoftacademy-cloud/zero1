@@ -5,30 +5,30 @@ import { Button } from "@/components/ui/button";
 
 const services = [
   {
-    title: "Digital & Software Engineering",
+    title: "Artificial Intelligence & Data Analytics",
     description: "Building the digital backbone of modern enterprises.",
-    image: "/images/service-digital.jpg",
+    image: "/images/service-ai.png",
   },
   {
     title: "Intelligent Cloud & AI",
-    description: "Future-proofing business through automation and data.",
-    image: "/images/service-cloud.jpg",
+    description: "Advancing intelligent automation through enterprise data.",
+    image: "/images/service-cs.png",
   },
   {
-    title: "Distribution & Supply Chain",
-    description: "Moving the hardware that powers the software.",
-    image: "/images/service-distribution.jpg",
+    title: "Cybersecurity & OT Security",
+    description: "Safeguarding industrial environments through comprehensive OT security.",
+    image: "/images/service-dist.png",
   },
-  {
-    title: "Enterprise Solutions",
-    description: "The operational engine of the business.",
-    image: "/images/service-enterprise.jpg",
-  },
-  {
-    title: "Growth & Enablement",
-    description: "Tools to scale your brand and workforce.",
-    image: "/images/service-growth.jpg",
-  },
+  // {
+  //   title: "Enterprise Solutions",
+  //   description: "The operational engine of the business.",
+  //   image: "/images/service-enterprise.jpg",
+  // },
+  // {
+  //   title: "Growth & Enablement",
+  //   description: "Tools to scale your brand and workforce.",
+  //   image: "/images/service-growth.jpg",
+  // },
 ];
 
 export function ServicesPreview() {
@@ -65,7 +65,7 @@ export function ServicesPreview() {
           <div className="lg:w-[45%] flex flex-col gap-5">
             {services.map((service, index) => (
               <div key={index} className="flex items-center gap-5">
-                <div className="relative w-[88] h-[88] flex-shrink-0 overflow-hidden rounded-full">
+                <div className="relative w-[140] h-[140] shrink-0 overflow-hidden rounded-full">
                   <Image
                     src={service.image || "/placeholder.svg"}
                     alt={service.title}

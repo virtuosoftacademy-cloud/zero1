@@ -20,7 +20,7 @@ export function CTASection() {
 
             <div className="flex items-center justify-center gap-3 text-foreground mb-8">
               <PhoneIcon className="w-5 h-5" />
-              <span className="font-bold text-lg">(+974) 40339170</span>
+              <span className="font-bold text-lg">(974) 4033 9170</span>
             </div>
 
             <Button className="bg-primary hover:bg-primary-dark text-primary-foreground px-6 py-3 font-semibold">

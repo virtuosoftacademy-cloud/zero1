@@ -42,7 +42,7 @@ export function HeroSection() {
           </h1>
 
           <p className="mx-auto mb-8 max-w-4xl text-sm text-text-muted-on-dark sm:text-base lg:text-lg">
-            From Qatar's industrial roots to the future of AI-driven enterprise. Scale your operations with an integrated ecosystem of distribution, ERP expertise, and custom software engineering.
+            From Qatar's industrial roots to the future of AI-driven enterprise. Scale your operations with an integrated ecosystem of distribution, Cybersecurity expertise, and custom AI and Data Solutions.
           </p>
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">

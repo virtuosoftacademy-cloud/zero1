@@ -43,10 +43,13 @@ export function ClientLogosSection() {
     <section className="overflow-hidden bg-white py-12 lg:py-16">
       <div className="mb-12 text-center lg:mb-16 flex flex-col items-center">
         <h2 className="mb-2 text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
-          Backed by Global Leaders
+          Our Strategic Partnership Alliances
         </h2>
-        <p className="text-sm sm:text-base max-w-2xl">
-          We maintain strategic alliances with the world’s top technology providers to deliver enterprise-grade solutions without compromise.        </p>
+        <p className="text-xs sm:text-sm max-w-5xl">
+          Strategic alliances and partnerships are important drivers for our sustainable growth. We have always been committed to creating a harmonious
+          environment for win-win results, which has, in turn, helped build IT solutions to meet customers' requirements quickly and reliably.
+          We maintain close relationships with renowned global companies.
+        </p>
       </div>
       <div className="relative">
         {/* Fade edges */}

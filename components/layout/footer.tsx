@@ -7,9 +7,6 @@ import {
   ClockIcon,
   PhoneIcon,
   MapPinIcon,
-  FacebookIcon,
-  InstagramIcon,
-  LinkedInIcon,
 } from "@/components/icons";
 import Image from "next/image";
 
@@ -22,10 +19,11 @@ const exploreLinks = [
 ];
 
 const contactInfo = [
-  { icon: MailIcon, text: "mail@01telecom.qa" },
-  { icon: ClockIcon, text: "Mon – Fri: 10 am – 8 pm" },
-  { icon: PhoneIcon, text: "(+974) 40339170" },
-  { icon: MapPinIcon, text: "Doha, Qatar" },
+  { icon: 'icons/msg.svg', text: "mail@01telecom.qa" },
+  { icon: 'icons/location.svg',text: "Mon – Fri: 10 am – 8 pm" },
+  { icon: 'icons/phone.svg',text: "(974) 4033 9170" },
+  { icon: 'icons/telephone.svg',text: "(974) 4033 9166" },
+  { icon: 'icons/location.svg',text: "Zero One Telecommunication & Electronics Building No. 178, Gate No. 61, Street No. 2, Industrial Area.P.O.Box 490, Doha, Qatar." },
 ];
 
 export function Footer() {
@@ -36,39 +34,39 @@ export function Footer() {
   return (
     <footer className="relative">
       {/* Main footer with dark background and geometric pattern */}
-      <div className="bg-surface-dark-secondary relative px-16 lg:px-22 overflow-hidden">
+      <div className="bg-surface-dark-secondary/80 relative px-16 lg:px-22 overflow-hidden">
         <div className="absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source src="/videos/hero-bg.mp4" type="video/mp4" />
-          {/* Add webm version if you have it for better compatibility/performance */}
-          {/* <source src="/videos/hero-bg.webm" type="video/webm" /> */}
-          Your browser does not support the video tag.
-        </video>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 h-full w-full object-cover"
+          >
+            <source src="/videos/hero-bg.mp4" type="video/mp4" />
+            {/* Add webm version if you have it for better compatibility/performance */}
+            {/* <source src="/videos/hero-bg.webm" type="video/webm" /> */}
+            Your browser does not support the video tag.
+          </video>
 
-        {/* Optional: subtle overlay to improve text readability */}
-        <div className="absolute inset-0 bg-black/30" />
-      </div>
+          {/* Optional: subtle overlay to improve text readability */}
+          <div className="absolute inset-0 bg-black/30" />
+        </div>
 
         <div className="relative z-10 container mx-auto px-4 lg:px-8 py-12 lg:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+          <div className="flex flex-col md:flex-row gap-12 lg:gap-16">
             {/* Logo and description */}
             <div>
               <Link href="/" className="inline-block mb-5">
-                   <Image
-          src={Logo}
-          alt="Zero1 Logo"
-          width={120}
-          height={40}
-          className="object-contain"
-        />
+                <Image
+                  src={Logo}
+                  alt="Zero1 Logo"
+                  width={120}
+                  height={40}
+                  className="object-contain"
+                />
               </Link>
-              <p className="text-background text-sm leading-relaxed max-w-xs">
+              <p className="text-background text-sm md:text-lg leading-relaxed">
                 From Qatar's industrial roots to the future of AI-driven enterprise.
                 Scale your operations with an integrated ecosystem of distribution,
                 ERP expertise, and custom software engineering.
@@ -98,7 +96,7 @@ export function Footer() {
               <ul className="space-y-3">
                 {contactInfo.map((item, index) => (
                   <li key={index} className="flex items-center gap-3">
-                    <item.icon className="w-4 h-4 text-primary shrink-0" />
+                    <Image src={item.icon} alt={item.text} width={160} height={160} className="size-5 text-primary shrink-0" />
                     <span className="text-background text-sm">{item.text}</span>
                   </li>
                 ))}
