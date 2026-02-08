@@ -25,10 +25,7 @@ interface ServicesSectionProps {
   className?: string
 }
 
-export default function ServicesSectionDist({
-  category,
-  className,
-}: ServicesSectionProps) {
+export default function ServicesSectionDist({ category, className, id }: ServicesSectionProps & {id?: string}) {
   const {
     title,
     subtitle,
@@ -39,17 +36,19 @@ export default function ServicesSectionDist({
   } = category
 
   return (
-    <div className={cn("relative", className)}>
+    <div id={id} className={cn("relative ", className)}>
       <section
-        className={cn(
-          "bg-cover bg-center",
-          bgColor,
-          textColor
-        )}
+  className={cn(
+    "bg-cover bg-center min-h-screen flex items-center",
+    bgColor,
+    textColor
+  )}
+
         style={{ backgroundImage: `url(${bgImage})` }}
       >
 
-        <div className="relative z-10 px-6 md:px-10 lg:px-24 py-20">
+       <div className="relative z-10 px-6 md:px-10 lg:px-24 py-20 w-full">
+
           {/* Header */}
           <div className="max-w-5xl pb-2 md:pb-8 space-y-3">
             <h2 className="text-2xl lg:text-4xl font-extrabold leading-tight mt-2">

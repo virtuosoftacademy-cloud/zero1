@@ -11,9 +11,10 @@ export default function ServicesPage() {
     <main className="min-h-screen">
       <Header />
       <ServicesHero />
-      <ServicesSection category={aiCategory}/>
-      <ServicesSection category={csCategory}/>
-      <ServicesSectionDist category={dsCategory}/>
+     <ServicesSection id="ai" category={aiCategory} />
+<ServicesSection id="cs" category={csCategory} />
+<ServicesSectionDist id="dist" category={dsCategory} />
+
       <Footer />
     </main>
   );

@@ -27,10 +27,10 @@ const jobListings = [
     isOpenApplication: false,
   },
   {
-    title: "Data Scientist",
-    type: "Full-time",
-    location: "Doha, QA",
-    description: "",
+    title: "Open Application",
+    type: "Full and Part-time engagements.",
+    location: "",
+    description: "Don't see your role available? Apply for an open application!",
     isOpenApplication: true,
   },
 ];
@@ -49,54 +49,53 @@ function JobCard({
   isOpenApplication: boolean;
 }) {
   return (
-    <>
-      <div className="bg-secondary rounded-lg p-6 md:p-8 flex flex-col h-full">
-        {/* Title */}
-        <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
-          {title}
-        </h3>
+    <div className="bg-secondary rounded-lg p-6 md:p-8 flex flex-col h-full">
+      {/* Title */}
+      <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
+        {title}
+      </h3>
 
-        {/* Type & Location */}
-        <p className="text-foreground font-medium mb-4">
-          {type} . {location}
-        </p>
+      {/* Type & Location */}
+      <p className="text-foreground font-medium mb-4">
+        {type} · {location}
+      </p>
 
-        {/* Description or Open Application */}
-        {isOpenApplication ? (
-          <div className="flex-1">
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Don't see your role available? Apply for an open application!
-            </p>
-          </div>
-        ) : (
-          <p className="text-muted-foreground text-sm leading-relaxed flex-1">
-            {description}
+      {/* Description */}
+      {isOpenApplication ? (
+        <div className="flex-1">
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            Don't see your role available? Apply for an open application!
           </p>
-        )}
-
-        {/* Link */}
-        <div className="mt-6">
-          {isOpenApplication ? (
-            <Link
-              href="/careers/apply"
-              className="text-primary font-medium hover:underline inline-flex items-center gap-1"
-            >
-              Apply now
-            </Link>
-          ) : (
-            <Link
-              href={`/careers/${title.toLowerCase().replace(/\s+/g, "-")}`}
-              className="text-foreground font-medium hover:text-primary inline-flex items-center gap-2 transition-colors"
-            >
-              View Role
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          )}
         </div>
+      ) : (
+        <p className="text-foreground text-sm leading-relaxed flex-1">
+          {description}
+        </p>
+      )}
+
+      {/* RIGHT ALIGNED BUTTON */}
+      <div className="mt-6 flex justify-end">
+        {isOpenApplication ? (
+          <Link
+            href="/careers/apply"
+            className="text-primary font-medium hover:underline inline-flex items-center gap-1"
+          >
+            Apply now
+          </Link>
+        ) : (
+          <Link
+            href={`/careers/${title.toLowerCase().replace(/\s+/g, "-")}`}
+            className="text-foreground font-medium hover:text-primary inline-flex items-center gap-2 transition-colors"
+          >
+            View Role
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        )}
       </div>
-    </>
+    </div>
   );
 }
+
 
 export function CareersJobs() {
   return (

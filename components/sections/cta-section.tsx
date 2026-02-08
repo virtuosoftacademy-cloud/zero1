@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PhoneIcon } from "@/components/icons";
-
+import Link from "next/link";
 export function CTASection() {
   return (
     <section className="bg-[#f5ebe4] relative min-h-[350] lg:min-h-[300]">
@@ -23,9 +23,13 @@ export function CTASection() {
               <span className="font-bold text-lg">(974) 4033 9170</span>
             </div>
 
-            <Button className="bg-primary hover:bg-primary-dark text-primary-foreground px-6 py-3 font-semibold">
-              Book A Strategy Session
-            </Button>
+            <Button
+  asChild
+  className="bg-primary hover:bg-primary-dark text-primary-foreground px-6 py-3 font-semibold"
+>
+  <Link href="/contact">Book A Strategy Session</Link>
+</Button>
+
           </div>
         </div>
         {/* Background image */}

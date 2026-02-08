@@ -30,18 +30,21 @@ export function HeroSection() {
 
       {/* Main Content */}
       <div className="relative text-center z-10 m-auto max-w-7xl px-4 py-16  sm:py-24 lg:px-8 lg:py-32">
-          <p className="mb-4 text-lg font-bold text-text-on-dark sm:text-xl lg:text-2xl">
+          <p className="mb-4 text-xl font-extrabold tracking-wide text-[#E6EBF5] sm:text-2xl md:text-3xl lg:text-4xl">
+
             50 Years Of Stability.
           </p>
+<h1 className="mb-6 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-[64px]">
+  <span className="text-[#E6EBF5]">
+    Built For The{" "}
+  </span>
+  <span className="bg-linear-to-r from-primary-dark to-primary bg-clip-text text-transparent">
+    Next Digital Frontier.
+  </span>
+</h1>
 
-          <h1 className="mb-6 text-3xl font-extrabold leading-tight tracking-tight text-text-on-dark sm:text-4xl md:text-5xl lg:text-[60px]">
-            Built For The{" "}
-            <span className="bg-linear-to-r from-primary-dark to-primary bg-clip-text text-transparent">
-              Next Digital Frontier.
-            </span>
-          </h1>
 
-          <p className="mx-auto mb-8 max-w-4xl text-sm text-text-muted-on-dark sm:text-base lg:text-lg">
+          <p className="mx-auto mb-8 max-w-6xl text-sm text-text-on-dark sm:text-base lg:text-lg">
             From Qatar's industrial roots to the future of AI-driven enterprise. Scale your operations with an integrated ecosystem of distribution, Cybersecurity expertise, and custom AI and Data Solutions.
           </p>
 
